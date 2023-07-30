@@ -47,13 +47,27 @@ void RGB::set(uint8_t r, uint8_t g, uint8_t b)
 void RGB::set(colours colour)
 {
     switch (colour){
-        case RED: this->set(255, 0, 0);
-        case GREEN: this->set(0, 255, 0);
-        case BLUE: this->set(0, 0, 255);
-        case YELLOW: this->set(255, 255, 0);
-        case MAGENTA: this->set(255, 0, 255);
-        case CYAN: this->set(0, 255, 255);
-        case WHITE: this->set(255, 255, 255);
+        case RED: 
+            this->set(255, 0, 0);
+            break;
+        case GREEN:
+            this->set(0, 255, 0);
+            break;
+        case BLUE:
+            this->set(0, 0, 255);
+            break;
+        case YELLOW:
+            this->set(255, 255, 0);
+            break;
+        case MAGENTA:
+            this->set(255, 0, 255);
+            break;
+        case CYAN:
+            this->set(0, 255, 255);
+            break;
+        case WHITE:
+            this->set(255, 255, 255);
+            break;
     }
 }
 
