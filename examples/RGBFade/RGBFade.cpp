@@ -1,7 +1,7 @@
 /* pico-RGB-lib - HelloRGB.cpp
  * Craig Cochrane, 2023
  *
- * Basic example demonstrating controlling an RGB LED with the library
+ * Example demonstrating a slow fade through the RGB colours
  */
 
 #include "RGB.hpp"

@@ -33,8 +33,9 @@ void RGB::on(void)
 
 void RGB::off(void)
 {
-    for (int i{0}; i<3; i++)
-    pwm_set_gpio_level(output_pins[0], 255);
+    pwm_set_gpio_level(output_pins[0], 256);
+    pwm_set_gpio_level(output_pins[1], 256);
+    pwm_set_gpio_level(output_pins[2], 256);
 }
 
 void RGB::set(uint8_t r, uint8_t g, uint8_t b)
