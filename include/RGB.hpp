@@ -20,6 +20,7 @@ class RGB
 
         void on(void);
         void off(void);
+        void toggle(void);
 
         void set(uint8_t r, uint8_t g, uint8_t b);
         void set(colours colour);
@@ -34,6 +35,7 @@ class RGB
     private:
         int output_pins[3];
         int _r, _g, _b;
+        bool _on = true;
 
         int _max_count {255};
 };

@@ -28,18 +28,33 @@ RGB::RGB(int r_pin, int g_pin, int b_pin)
 
 void RGB::on(void)
 {
+    _on = true;
     set(_r, _g, _b);
 }
 
 void RGB::off(void)
 {
+    _on = false;
     pwm_set_gpio_level(output_pins[0], 256);
     pwm_set_gpio_level(output_pins[1], 256);
     pwm_set_gpio_level(output_pins[2], 256);
 }
 
+void RGB::toggle()
+{
+    _on ^= 1;
+
+    if (_on)
+    {
+        this->on();
+    }else{
+        this->off();
+    }
+}
+
 void RGB::set(uint8_t r, uint8_t g, uint8_t b)
 {
+    _on = true;
     red(r);
     green(g);
     blue(b);
@@ -47,6 +62,7 @@ void RGB::set(uint8_t r, uint8_t g, uint8_t b)
 
 void RGB::set(colours colour)
 {
+    _on = true;
     switch (colour){
         case RED: 
             this->set(255, 0, 0);

@@ -10,24 +10,17 @@
 
 bool LED_on {true};
 RGB led(5, 4, 3);
-const uint LED_PIN = PICO_DEFAULT_LED_PIN;
 
 void led_toggle(uint pin, uint32_t event_mask)
 {
     /* Callback function to toggle the LED on and off 
      * Will be set as an interrupt on a pin with a button connected */
-    if (LED_on) led.off();
-    else led.on();
+    led.toggle();
     LED_on ^= 1;
-    gpio_put(LED_PIN, LED_on);
 }
 
 int main()
 {
-    gpio_init(LED_PIN);
-    gpio_set_dir(LED_PIN, GPIO_OUT);
-    gpio_put(LED_PIN, LED_on);
-
     gpio_init(15);
     gpio_set_dir(15, GPIO_IN);
     gpio_set_irq_enabled_with_callback(15, GPIO_IRQ_EDGE_RISE, true, &led_toggle);
