@@ -14,12 +14,15 @@
 class RGB
 {
     public:
+        enum colours {RED, GREEN, BLUE, YELLOW, MAGENTA, CYAN, WHITE};
+        
         RGB(int r_pin, int g_pin, int b_pin);
 
         void on(void);
         void off(void);
 
         void set(uint8_t r, uint8_t g, uint8_t b);
+        void set(colours colour);
 
         void red(int r);
         void green(int g);
